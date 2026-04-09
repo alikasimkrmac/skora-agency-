@@ -4,11 +4,9 @@ import Image from 'next/image'
 
 export default function HeroSection() {
   return (
-    <section id="anasayfa" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-obsidian">
-      {/* Ambient Glow Background */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="ambient-glow w-[400px] h-[400px] md:w-[800px] md:h-[800px]" />
-      </div>
+    <section id="anasayfa" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary">
+      {/* Radial gradient overlay for depth */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center_bottom,_rgba(0,0,0,0.4)_0%,_transparent_70%)]" />
 
       {/* AI Figure */}
       <div className="absolute inset-0 flex items-end justify-center">
@@ -23,39 +21,15 @@ export default function HeroSection() {
             alt="SKORA AI Figure"
             fill
             priority
-            className="object-contain object-bottom drop-shadow-[0_0_60px_rgba(255,0,34,0.3)]"
+            className="object-contain object-bottom"
           />
-          {/* Bottom fade to blend with background */}
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-obsidian to-transparent" />
+          {/* Bottom fade to blend into next section */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-primary to-transparent" />
         </motion.div>
       </div>
 
-      {/* Content */}
-      <div className="relative z-20 text-center px-6 max-w-6xl">
-        <motion.h1
-          className="font-[family-name:var(--font-space-grotesk)] font-bold text-4xl sm:text-5xl md:text-7xl leading-tight mb-6 uppercase"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          style={{ letterSpacing: '-0.02em' }}
-        >
-          REKLAM YAPMIYORUZ.
-          <br />
-          <span className="text-primary">OTONOM BÜYÜME</span>
-          <br />
-          SİSTEMLERİ İNŞA EDİYORUZ.
-        </motion.h1>
-
-        <motion.p
-          className="font-[family-name:var(--font-manrope)] text-white/60 text-lg mb-12 max-w-2xl mx-auto"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          Geleneksel büyüme sistemleri bir hikayede ve sağlanmadan işler, yapay zeka ile ortak, zahmetsiz büyüme buluyoruz.
-        </motion.p>
-
-        {/* CTA Buttons */}
+      {/* CTA Buttons */}
+      <div className="absolute bottom-16 md:bottom-24 z-20 w-full px-6">
         <motion.div
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           initial={{ opacity: 0, y: 20 }}
@@ -64,13 +38,12 @@ export default function HeroSection() {
         >
           {/* Primary CTA with Pulse */}
           <motion.button
-            className="relative bg-primary hover:bg-primary-container text-white px-8 py-4 min-h-[44px] rounded-sm font-[family-name:var(--font-space-grotesk)] text-sm uppercase tracking-wide transition-all duration-200 active:scale-[0.98]"
+            className="relative bg-obsidian hover:bg-surface text-white px-8 py-4 min-h-[44px] rounded-sm font-[family-name:var(--font-space-grotesk)] text-sm uppercase tracking-wide transition-all duration-200 active:scale-[0.98]"
             whileHover={{ scale: 1.02 }}
           >
             <span className="relative z-10">WHATSAPP İLE ÜSTÜNÜ ATESTE</span>
-            {/* Pulse Animation */}
             <motion.span
-              className="absolute inset-0 rounded-sm bg-primary"
+              className="absolute inset-0 rounded-sm bg-obsidian"
               animate={{
                 scale: [1, 1.1, 1],
                 opacity: [0.5, 0, 0.5],
@@ -84,7 +57,7 @@ export default function HeroSection() {
           </motion.button>
 
           {/* Secondary CTA (Ghost) */}
-          <button className="border border-primary/30 text-primary hover:bg-secondary-container px-8 py-4 min-h-[44px] rounded-sm font-[family-name:var(--font-space-grotesk)] text-sm uppercase tracking-wide transition-all duration-200 active:scale-[0.98]">
+          <button className="border border-white/30 text-white hover:bg-white/10 px-8 py-4 min-h-[44px] rounded-sm font-[family-name:var(--font-space-grotesk)] text-sm uppercase tracking-wide transition-all duration-200 active:scale-[0.98]">
             BAŞLAMANIZ İÇİN YETER
           </button>
         </motion.div>
@@ -92,7 +65,7 @@ export default function HeroSection() {
 
       {/* Decorative Labels */}
       <motion.div
-        className="absolute top-1/4 left-[5%] md:left-[10%] font-[family-name:var(--font-space-grotesk)] text-xs uppercase tracking-wider text-white/40"
+        className="absolute top-1/4 left-[5%] md:left-[10%] font-[family-name:var(--font-space-grotesk)] text-xs uppercase tracking-wider text-white/60"
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 1.2 }}
@@ -101,7 +74,7 @@ export default function HeroSection() {
       </motion.div>
 
       <motion.div
-        className="absolute top-1/3 right-[5%] md:right-[10%] font-[family-name:var(--font-space-grotesk)] text-xs uppercase tracking-wider text-white/40"
+        className="absolute top-1/3 right-[5%] md:right-[10%] font-[family-name:var(--font-space-grotesk)] text-xs uppercase tracking-wider text-white/60"
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 1.2 }}
