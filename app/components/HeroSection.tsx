@@ -4,48 +4,120 @@ import Image from 'next/image'
 
 export default function HeroSection() {
   return (
-    <section id="anasayfa" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary">
-      {/* Radial gradient overlay for depth */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center_bottom,_rgba(0,0,0,0.4)_0%,_transparent_70%)]" />
+    <section id="anasayfa" className="relative min-h-screen flex flex-col items-center justify-start overflow-hidden bg-obsidian pt-20">
+      {/* Red ambient glow behind figure */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] md:w-[900px] md:h-[700px] bg-[radial-gradient(ellipse_at_center,_rgba(255,0,34,0.35)_0%,_rgba(255,0,34,0.1)_40%,_transparent_70%)]" />
+
+      {/* Floating Labels */}
+      <motion.div
+        className="absolute top-[18%] left-[4%] md:left-[8%] z-20"
+        initial={{ opacity: 0, x: -30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+      >
+        <div className="bg-surface-container/80 backdrop-blur-sm px-4 py-2 rounded-sm">
+          <span className="font-[family-name:var(--font-space-grotesk)] text-xs uppercase tracking-wider text-white/50">YAPAY ZEKA İLE</span>
+          <div className="font-[family-name:var(--font-space-grotesk)] text-sm font-bold uppercase text-white">AAA OTOMASYON</div>
+        </div>
+      </motion.div>
+
+      <motion.div
+        className="absolute top-[22%] right-[4%] md:right-[8%] z-20"
+        initial={{ opacity: 0, x: 30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 1.0 }}
+      >
+        <div className="bg-surface-container/80 backdrop-blur-sm px-4 py-2 rounded-sm text-right">
+          <span className="font-[family-name:var(--font-space-grotesk)] text-xs uppercase tracking-wider text-white/50">MÜŞTERİ ÖLÇEK</span>
+          <div className="font-[family-name:var(--font-space-grotesk)] text-sm font-bold uppercase text-primary">-230%</div>
+        </div>
+      </motion.div>
+
+      {/* +400 Badge */}
+      <motion.div
+        className="absolute top-[45%] left-[3%] md:left-[6%] z-20"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 1.2 }}
+      >
+        <div className="bg-primary/20 backdrop-blur-sm px-3 py-2 rounded-sm">
+          <div className="font-[family-name:var(--font-space-grotesk)] text-2xl font-bold text-primary">+400</div>
+          <span className="font-[family-name:var(--font-manrope)] text-[10px] uppercase tracking-wider text-white/50">SONUÇ ODAKLI<br/>PROJE</span>
+        </div>
+      </motion.div>
 
       {/* AI Figure */}
-      <div className="absolute inset-0 flex items-end justify-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 40 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 1.4, ease: 'easeOut' }}
-          className="relative z-10 w-[320px] h-[450px] md:w-[440px] md:h-[620px]"
-        >
-          <Image
-            src="/hero-figure.jpg"
-            alt="SKORA AI Figure"
-            fill
-            priority
-            className="object-contain object-bottom"
-          />
-          {/* Bottom fade to blend into next section */}
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-primary to-transparent" />
-        </motion.div>
-      </div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9, y: 30 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 1.4, ease: 'easeOut' }}
+        className="relative z-10 w-[300px] h-[380px] md:w-[420px] md:h-[520px] mt-8"
+      >
+        <Image
+          src="/hero-figure.jpg"
+          alt="spark. agency AI Figure"
+          fill
+          priority
+          className="object-contain object-bottom"
+        />
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-obsidian to-transparent" />
+      </motion.div>
 
-      {/* CTA Buttons */}
-      <div className="absolute bottom-16 md:bottom-24 z-20 w-full px-6">
+      {/* Content below figure */}
+      <div className="relative z-20 text-center px-6 max-w-4xl -mt-8">
+        {/* Small label above heading */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="mb-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+        >
+          <span className="font-[family-name:var(--font-space-grotesk)] text-xs uppercase tracking-widest text-white/30">
+            OTONOM OLARAK. MÜHENDİSLİK GÜCİYLE.
+          </span>
+        </motion.div>
+
+        <motion.h1
+          className="font-[family-name:var(--font-space-grotesk)] font-bold text-3xl sm:text-4xl md:text-6xl leading-tight mb-6 uppercase"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          style={{ letterSpacing: '-0.02em' }}
+        >
+          REKLAM YAPMIYORUZ.
+          <br />
+          <span className="text-primary">OTONOM BÜYÜME</span>
+          <br />
+          SİSTEMLERİ İNŞA EDİYORUZ.
+        </motion.h1>
+
+        <motion.p
+          className="font-[family-name:var(--font-manrope)] text-white/50 text-sm md:text-base mb-10 max-w-2xl mx-auto leading-relaxed"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          Sadece reklamlarla değil, veriyle beslenen ve AI ile optimize edilen bir altyapıyla hükmedin.
+          SKORA, işletmenizin kalbine durdurulamaz bir büyüme motoru yerleştirir. Her etkileşim bir algoritma,
+          her sonuç ise bir mühendislik çıktısıdır. Tahminleri bırakın, sistemin gücüne odaklanın.
+        </motion.p>
+
+        {/* CTA Buttons */}
+        <motion.div
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.9 }}
         >
-          {/* Primary CTA with Pulse */}
           <motion.button
-            className="relative bg-obsidian hover:bg-surface text-white px-8 py-4 min-h-[44px] rounded-sm font-[family-name:var(--font-space-grotesk)] text-sm uppercase tracking-wide transition-all duration-200 active:scale-[0.98]"
+            className="relative bg-primary hover:bg-primary-container text-white px-8 py-4 min-h-[44px] rounded-sm font-[family-name:var(--font-space-grotesk)] text-sm uppercase tracking-wide transition-all duration-200 active:scale-[0.98]"
             whileHover={{ scale: 1.02 }}
           >
-            <span className="relative z-10">WHATSAPP İLE ÜSTÜNÜ ATESTE</span>
+            <span className="relative z-10">GELİŞİMİNİZİ ETKİLEŞTİRİN</span>
             <motion.span
-              className="absolute inset-0 rounded-sm bg-obsidian"
+              className="absolute inset-0 rounded-sm bg-primary"
               animate={{
-                scale: [1, 1.1, 1],
+                scale: [1, 1.08, 1],
                 opacity: [0.5, 0, 0.5],
               }}
               transition={{
@@ -56,31 +128,11 @@ export default function HeroSection() {
             />
           </motion.button>
 
-          {/* Secondary CTA (Ghost) */}
-          <button className="border border-white/30 text-white hover:bg-white/10 px-8 py-4 min-h-[44px] rounded-sm font-[family-name:var(--font-space-grotesk)] text-sm uppercase tracking-wide transition-all duration-200 active:scale-[0.98]">
-            BAŞLAMANIZ İÇİN YETER
+          <button className="bg-surface-container hover:bg-surface-container-high text-white px-8 py-4 min-h-[44px] rounded-sm font-[family-name:var(--font-space-grotesk)] text-sm uppercase tracking-wide transition-all duration-200 active:scale-[0.98]">
+            HIZLANMAYI KEŞFEDİN
           </button>
         </motion.div>
       </div>
-
-      {/* Decorative Labels */}
-      <motion.div
-        className="absolute top-1/4 left-[5%] md:left-[10%] font-[family-name:var(--font-space-grotesk)] text-xs uppercase tracking-wider text-white/60"
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, delay: 1.2 }}
-      >
-        STANDART YAKLAŞIM
-      </motion.div>
-
-      <motion.div
-        className="absolute top-1/3 right-[5%] md:right-[10%] font-[family-name:var(--font-space-grotesk)] text-xs uppercase tracking-wider text-white/60"
-        initial={{ opacity: 0, x: 20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, delay: 1.2 }}
-      >
-        ALGORITHM APPROACH
-      </motion.div>
     </section>
   )
 }
