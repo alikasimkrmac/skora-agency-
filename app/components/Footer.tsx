@@ -2,23 +2,16 @@ import Image from 'next/image'
 
 export default function Footer() {
   const socialLinks = [
-    { name: 'LINKEDIN', href: '#' },
     { name: 'INSTAGRAM', href: '#' },
-    { name: 'TELEGRAM', href: '#' },
-  ]
-
-  const legalLinks = [
-    { name: 'GİZLİLİK POLİTİKASI', href: '#' },
-    { name: 'KULLANIM ŞARTLARI', href: '#' },
-    { name: 'ÇEREZLER', href: '#' },
+    { name: 'WHATSAPP', href: 'https://wa.me/905XXXXXXXXX' },
   ]
 
   return (
     <footer className="bg-obsidian py-12 px-6">
       <div className="container mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
-          {/* Brand */}
-          <div>
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 mb-8">
+          {/* Brand - left aligned, takes more space */}
+          <div className="md:max-w-sm">
             <div className="relative w-[120px] h-[40px] mb-2">
               <Image
                 src="/logo.svg"
@@ -32,35 +25,18 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Social Links */}
-          <div>
+          {/* Social Links - right aligned */}
+          <div className="md:text-right">
             <h4 className="font-[family-name:var(--font-space-grotesk)] text-xs uppercase tracking-widest text-white/40 mb-4">
               SOSYAL
             </h4>
-            <ul className="space-y-2">
+            <ul className="flex gap-6">
               {socialLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="font-[family-name:var(--font-manrope)] text-sm text-white/60 hover:text-primary transition-colors duration-200"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Legal Links */}
-          <div>
-            <h4 className="font-[family-name:var(--font-space-grotesk)] text-xs uppercase tracking-widest text-white/40 mb-4">
-              YASAL
-            </h4>
-            <ul className="space-y-2">
-              {legalLinks.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
+                    target={link.name === 'WHATSAPP' ? '_blank' : undefined}
+                    rel={link.name === 'WHATSAPP' ? 'noopener noreferrer' : undefined}
                     className="font-[family-name:var(--font-manrope)] text-sm text-white/60 hover:text-primary transition-colors duration-200"
                   >
                     {link.name}
