@@ -44,7 +44,7 @@ export default function InfoCards() {
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
             >
-              <div className="bg-surface-container hover:bg-surface-container-high transition-colors duration-300 p-8 rounded-sm">
+              <div className="frosted-obsidian hover:bg-[rgba(53,53,53,0.75)] transition-colors duration-300 p-8 rounded-sm">
                 {/* Header row */}
                 <div className="flex items-start justify-between mb-4">
                   <div>

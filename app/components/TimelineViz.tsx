@@ -36,7 +36,7 @@ export default function TimelineViz() {
           <div className="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px]">
             {/* Central Hub */}
             <motion.div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-primary/30 flex items-center justify-center"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 md:w-32 md:h-32 rounded-full bg-surface-container flex items-center justify-center"
               initial={{ scale: 0, rotate: -180 }}
               whileInView={{ scale: 1, rotate: 0 }}
               viewport={{ once: true }}
@@ -51,7 +51,7 @@ export default function TimelineViz() {
 
             {/* Orbit Ring */}
             <motion.div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] md:w-[400px] md:h-[400px] rounded-full border border-white/5"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] md:w-[400px] md:h-[400px] rounded-full bg-[radial-gradient(circle,_transparent_48%,_rgba(255,255,255,0.03)_50%,_transparent_52%)]"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}

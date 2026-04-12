@@ -16,6 +16,8 @@ export default function IgnitionForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    const message = `Merhaba, SKORA ile iletişime geçmek istiyorum.%0A%0Aİsim: ${formData.name}%0AŞirket Büyüklüğü: ${formData.companySize}%0AWeb Sitesi: ${formData.website}%0AHedef Gelir: ${formData.revenue}%0ASektör: ${formData.industry}`
+    window.open(`https://wa.me/905XXXXXXXXX?text=${message}`, '_blank')
     setSubmitted(true)
   }
 
@@ -215,7 +217,7 @@ export default function IgnitionForm() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            SİSTEMİ ATEŞLE
+            WHATSAPP İLE SİSTEMİ ATEŞLE
           </motion.button>
         </motion.form>
       </div>

@@ -1,15 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 70" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 50" fill="none">
   <defs>
     <style>@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&amp;display=swap');</style>
   </defs>
-  <!-- "sp" -->
-  <text x="0" y="44" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="48" fill="#ff0022" letter-spacing="-1">sp</text>
-  <!-- 4-pointed star for 'a' -->
-  <path d="M90 10 C92 22, 98 28, 112 28 C98 28, 92 34, 90 46 C88 34, 82 28, 68 28 C82 28, 88 22, 90 10Z" fill="#ff0022"/>
-  <!-- "rk" -->
-  <text x="104" y="44" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="48" fill="#ff0022" letter-spacing="-1">rk</text>
-  <!-- dot -->
-  <circle cx="170" cy="40" r="5" fill="#ff0022"/>
-  <!-- "AGENCY" -->
-  <text x="72" y="62" font-family="'Space Grotesk', sans-serif" font-weight="400" font-size="13" fill="#555555" letter-spacing="6">AGENCY</text>
+  <text x="0" y="38" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="44" fill="#ff0022" letter-spacing="-1">SKORA</text>
+  <circle cx="165" cy="34" r="5" fill="#ff0022"/>
 </svg>

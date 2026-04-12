@@ -22,7 +22,7 @@ export default function Footer() {
             <div className="relative w-[120px] h-[40px] mb-2">
               <Image
                 src="/logo.svg"
-                alt="spark. agency"
+                alt="SKORA"
                 fill
                 className="object-contain object-left"
               />
@@ -74,7 +74,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="pt-8 bg-surface-container-low/30 -mx-6 px-6 mt-8">
           <p className="font-[family-name:var(--font-manrope)] text-white/30 text-xs text-center">
-            &copy; 2026 SPARK AGENCY. TÜM HAKLAR SAKLIDIR. OTONOM SİSTEMLER İLE
+            &copy; 2026 SKORA. TÜM HAKLAR SAKLIDIR. OTONOM SİSTEMLER İLE
             GÜÇLENDİRİLMİŞTİR.
           </p>
         </div>

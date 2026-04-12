@@ -3,30 +3,30 @@ import { motion } from 'framer-motion'
 
 const comparisonData = [
   {
-    category: 'GELENEKSEL MODEL',
+    category: 'VERİ STRATEJİSİ',
     traditional: 'Manuel Tahminler',
     skora: 'Algoritmik Hassasiyet',
   },
   {
-    category: 'YAKLAŞIM',
-    traditional: 'Reaktif Ekosistem',
-    skora: 'AI Öngörüş Karar | (24/7)',
+    category: 'OPERASYON',
+    traditional: 'İnsan Gücü (Yavaş)',
+    skora: 'AI Destekli Otomasyon (7/24)',
   },
   {
-    category: 'KAPASİTE',
-    traditional: 'Aylık Sadık Sistemi',
-    skora: 'Gerçek Zamanlı Vert Tasarruf',
+    category: 'RAPORLAMA',
+    traditional: 'Aylık Statik Slaytlar',
+    skora: 'Gerçek Zamanlı Veri Telemetrisi',
   },
   {
-    category: 'MALİYET',
-    traditional: 'Süz Metrikler',
-    skora: 'Her Veri an Optimizasyon',
+    category: 'SONUÇ',
+    traditional: 'Boş Metrikler (Beğeni/Tık)',
+    skora: 'Net ROI ve Ölçeklendirme',
   },
 ]
 
 export default function ComparisonTable() {
   return (
-    <section id="problemleri" className="bg-surface-container-low py-24 px-6">
+    <section id="problemleri" className="bg-surface py-24 px-6">
       <div className="container mx-auto max-w-5xl">
         {/* Section Header */}
         <motion.div
@@ -91,12 +91,20 @@ export default function ComparisonTable() {
           viewport={{ once: true }}
           transition={{ delay: 0.6 }}
         >
-          <button className="bg-primary hover:bg-primary-container text-white px-8 py-4 min-h-[44px] rounded-sm font-[family-name:var(--font-space-grotesk)] text-sm uppercase tracking-wide transition-all duration-200 active:scale-[0.98] flex-1">
-            TREN SİGNALLARINA ERİŞİM
-          </button>
-          <button className="border border-primary/30 text-primary hover:bg-secondary-container px-8 py-4 min-h-[44px] rounded-sm font-[family-name:var(--font-space-grotesk)] text-sm uppercase tracking-wide transition-all duration-200 active:scale-[0.98] flex-1">
-            LOJAM WHATSAPP
-          </button>
+          <a
+            href="https://wa.me/905XXXXXXXXX"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-primary hover:bg-primary-container text-white px-8 py-4 min-h-[44px] rounded-sm font-[family-name:var(--font-space-grotesk)] text-sm uppercase tracking-wide transition-all duration-200 active:scale-[0.98] flex-1 text-center"
+          >
+            ŞİMDİ WHATSAPP&apos;A BAĞLAN
+          </a>
+          <a
+            href="#hizmetler"
+            className="border border-primary/30 text-primary hover:bg-secondary-container px-8 py-4 min-h-[44px] rounded-sm font-[family-name:var(--font-space-grotesk)] text-sm uppercase tracking-wide transition-all duration-200 active:scale-[0.98] flex-1 text-center"
+          >
+            HİZMETLERİ İNCELE
+          </a>
         </motion.div>
       </div>
     </section>

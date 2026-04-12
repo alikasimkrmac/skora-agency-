@@ -19,7 +19,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "spark. agency | Otonom Büyüme Sistemleri",
+  title: "SKORA | Otonom Büyüme Sistemleri",
   description:
     "Reklam yapmıyoruz. Otonom büyüme sistemleri inşa ediyoruz. AI destekli pazarlama çözümleri.",
 };

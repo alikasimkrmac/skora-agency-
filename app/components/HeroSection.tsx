@@ -5,8 +5,8 @@ import Image from 'next/image'
 export default function HeroSection() {
   return (
     <section id="anasayfa" className="relative min-h-screen flex flex-col items-center justify-start overflow-hidden bg-obsidian pt-20">
-      {/* Red ambient glow behind figure */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] md:w-[900px] md:h-[700px] bg-[radial-gradient(ellipse_at_center,_rgba(255,0,34,0.35)_0%,_rgba(255,0,34,0.1)_40%,_transparent_70%)]" />
+      {/* Ambient glow behind figure - soft d00018 at 10% opacity */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] md:w-[900px] md:h-[700px] bg-[radial-gradient(ellipse_at_center,_rgba(208,0,24,0.15)_0%,_rgba(208,0,24,0.06)_40%,_transparent_70%)] opacity-80" />
 
       {/* Floating Labels */}
       <motion.div
@@ -73,7 +73,7 @@ export default function HeroSection() {
           transition={{ delay: 0.5 }}
         >
           <span className="font-[family-name:var(--font-space-grotesk)] text-xs uppercase tracking-widest text-white/30">
-            OTONOM OLARAK. MÜHENDİSLİK GÜCİYLE.
+            OTONOM OLARAK. MÜHENDİSLİK GÜCÜYLE.
           </span>
         </motion.div>
 
@@ -109,11 +109,14 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.9 }}
         >
-          <motion.button
-            className="relative bg-primary hover:bg-primary-container text-white px-8 py-4 min-h-[44px] rounded-sm font-[family-name:var(--font-space-grotesk)] text-sm uppercase tracking-wide transition-all duration-200 active:scale-[0.98]"
+          <motion.a
+            href="https://wa.me/905XXXXXXXXX"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative bg-primary hover:bg-primary-container text-white px-8 py-4 min-h-[44px] rounded-sm font-[family-name:var(--font-space-grotesk)] text-sm uppercase tracking-wide transition-all duration-200 active:scale-[0.98] inline-flex items-center gap-2"
             whileHover={{ scale: 1.02 }}
           >
-            <span className="relative z-10">GELİŞİMİNİZİ ETKİLEŞTİRİN</span>
+            <span className="relative z-10">WHATSAPP İLE SİSTEMİ ATEŞLE</span>
             <motion.span
               className="absolute inset-0 rounded-sm bg-primary"
               animate={{
@@ -126,11 +129,14 @@ export default function HeroSection() {
                 ease: 'easeInOut',
               }}
             />
-          </motion.button>
+          </motion.a>
 
-          <button className="bg-surface-container hover:bg-surface-container-high text-white px-8 py-4 min-h-[44px] rounded-sm font-[family-name:var(--font-space-grotesk)] text-sm uppercase tracking-wide transition-all duration-200 active:scale-[0.98]">
+          <a
+            href="#hizmetler"
+            className="bg-surface-container hover:bg-surface-container-high text-white px-8 py-4 min-h-[44px] rounded-sm font-[family-name:var(--font-space-grotesk)] text-sm uppercase tracking-wide transition-all duration-200 active:scale-[0.98] inline-block"
+          >
             HIZLANMAYI KEŞFEDİN
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>

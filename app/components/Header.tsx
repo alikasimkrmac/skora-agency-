@@ -35,7 +35,7 @@ export default function Header() {
         <a href="#anasayfa" className="relative w-[120px] h-[40px]">
           <Image
             src="/logo.svg"
-            alt="spark. agency"
+            alt="SKORA"
             fill
             className="object-contain object-left"
             priority
@@ -58,9 +58,14 @@ export default function Header() {
 
         {/* Right side */}
         <div className="hidden lg:flex items-center gap-4">
-          <button className="bg-primary hover:bg-primary-container text-white px-6 py-2 min-h-[44px] rounded-sm font-[family-name:var(--font-space-grotesk)] text-sm uppercase tracking-wide transition-all duration-200 active:scale-[0.98]">
+          <a
+            href="https://wa.me/905XXXXXXXXX"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-primary hover:bg-primary-container text-white px-6 py-2 min-h-[44px] rounded-sm font-[family-name:var(--font-space-grotesk)] text-sm uppercase tracking-wide transition-all duration-200 active:scale-[0.98] inline-flex items-center"
+          >
             BAŞLAT
-          </button>
+          </a>
         </div>
 
         {/* Mobile Hamburger */}
@@ -97,9 +102,14 @@ export default function Header() {
                 </li>
               ))}
               <li>
-                <button className="bg-primary hover:bg-primary-container text-white px-6 py-2 rounded-sm font-[family-name:var(--font-space-grotesk)] text-sm uppercase tracking-wide transition-all duration-200">
+                <a
+                  href="https://wa.me/905XXXXXXXXX"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-primary hover:bg-primary-container text-white px-6 py-2 rounded-sm font-[family-name:var(--font-space-grotesk)] text-sm uppercase tracking-wide transition-all duration-200 inline-flex items-center"
+                >
                   BAŞLAT
-                </button>
+                </a>
               </li>
             </ul>
           </motion.div>

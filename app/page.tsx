@@ -6,6 +6,7 @@ import ShiftGears from './components/ShiftGears'
 import TimelineViz from './components/TimelineViz'
 import IgnitionForm from './components/IgnitionForm'
 import Footer from './components/Footer'
+import WhatsAppButton from './components/WhatsAppButton'
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <IgnitionForm />
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   )
 }
