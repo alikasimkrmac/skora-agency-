@@ -6,9 +6,9 @@ export default function IgnitionForm() {
   const [formData, setFormData] = useState({
     name: '',
     companySize: '',
-    website: '',
+    email: '',
     revenue: '',
-    industry: '',
+    problems: '',
   })
 
   const [focusedField, setFocusedField] = useState<string | null>(null)
@@ -16,7 +16,7 @@ export default function IgnitionForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    const message = `Merhaba, SKORA ile iletişime geçmek istiyorum.%0A%0Aİsim: ${formData.name}%0AŞirket Büyüklüğü: ${formData.companySize}%0AWeb Sitesi: ${formData.website}%0AHedef Gelir: ${formData.revenue}%0ASektör: ${formData.industry}`
+    const message = `Merhaba, SKORA ile iletişime geçmek istiyorum.%0A%0Aİsim: ${formData.name}%0AŞirket Büyüklüğü: ${formData.companySize}%0AE-posta: ${formData.email}%0AHedef Gelir: ${formData.revenue}%0ATemel Sorunlar: ${formData.problems}`
     window.open(`https://wa.me/905XXXXXXXXX?text=${message}`, '_blank')
     setSubmitted(true)
   }
@@ -40,9 +40,17 @@ export default function IgnitionForm() {
             >
               SİSTEM AKTİF
             </h2>
-            <p className="font-[family-name:var(--font-manrope)] text-white/60">
-              En kısa sürede sizinle iletişime geçeceğiz.
+            <p className="font-[family-name:var(--font-manrope)] text-white/60 max-w-md mx-auto">
+              Bilgileriniz sistemimize iletildi. Teknik ekibimizle şimdi WhatsApp üzerinden de görüşebilirsiniz.
             </p>
+            <a
+              href="https://wa.me/905XXXXXXXXX"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-8 bg-primary hover:bg-primary-container text-white px-8 py-4 rounded-sm font-[family-name:var(--font-space-grotesk)] text-sm uppercase tracking-wide transition-all duration-200 active:scale-[0.98]"
+            >
+              WHATSAPP&apos;A BAĞLAN
+            </a>
           </motion.div>
         </div>
       </section>
@@ -50,7 +58,7 @@ export default function IgnitionForm() {
   }
 
   const inputClass =
-    'w-full bg-transparent border-b-2 border-white/10 focus:border-primary py-3 font-[family-name:var(--font-manrope)] text-white outline-none transition-all duration-300'
+    'w-full bg-surface/50 border-b-2 border-white/10 focus:border-primary py-3 px-4 font-[family-name:var(--font-manrope)] text-white outline-none transition-all duration-300 rounded-t-sm'
 
   const getGlowStyle = (field: string) => ({
     boxShadow:
@@ -87,7 +95,7 @@ export default function IgnitionForm() {
           {/* Name Field */}
           <div className="relative">
             <label className="font-[family-name:var(--font-space-grotesk)] text-xs uppercase tracking-widest text-white/40 mb-2 block">
-              İSİM
+              ADINIZ SOYADINIZ
             </label>
             <input
               type="text"
@@ -136,22 +144,22 @@ export default function IgnitionForm() {
             </select>
           </div>
 
-          {/* Website */}
+          {/* Email Field */}
           <div className="relative">
             <label className="font-[family-name:var(--font-space-grotesk)] text-xs uppercase tracking-widest text-white/40 mb-2 block">
-              WEB SİTESİ
+              E-POSTA ADRESİNİZ
             </label>
             <input
-              type="url"
-              value={formData.website}
+              type="email"
+              value={formData.email}
               onChange={(e) =>
-                setFormData({ ...formData, website: e.target.value })
+                setFormData({ ...formData, email: e.target.value })
               }
-              onFocus={() => setFocusedField('website')}
+              onFocus={() => setFocusedField('email')}
               onBlur={() => setFocusedField(null)}
               className={inputClass}
-              style={getGlowStyle('website')}
-              placeholder="https://your-company-goes-here"
+              style={getGlowStyle('email')}
+              placeholder="ornek@sirketiniz.com"
             />
           </div>
 
@@ -174,40 +182,22 @@ export default function IgnitionForm() {
             />
           </div>
 
-          {/* Industry */}
+          {/* Problems Textarea */}
           <div className="relative">
             <label className="font-[family-name:var(--font-space-grotesk)] text-xs uppercase tracking-widest text-white/40 mb-2 block">
-              SEKTÖR
+              İŞLETMENİZİN KARŞILAŞTIĞI TEMEL SORUNLAR
             </label>
-            <select
-              value={formData.industry}
+            <textarea
+              value={formData.problems}
               onChange={(e) =>
-                setFormData({ ...formData, industry: e.target.value })
+                setFormData({ ...formData, problems: e.target.value })
               }
-              onFocus={() => setFocusedField('industry')}
+              onFocus={() => setFocusedField('problems')}
               onBlur={() => setFocusedField(null)}
-              className={`${inputClass} appearance-none cursor-pointer`}
-              style={getGlowStyle('industry')}
-            >
-              <option value="" className="bg-surface text-white">
-                Sektörünüz
-              </option>
-              <option value="tech" className="bg-surface text-white">
-                Teknoloji
-              </option>
-              <option value="finance" className="bg-surface text-white">
-                Finans
-              </option>
-              <option value="healthcare" className="bg-surface text-white">
-                Sağlık
-              </option>
-              <option value="ecommerce" className="bg-surface text-white">
-                E-Ticaret
-              </option>
-              <option value="other" className="bg-surface text-white">
-                Diğer
-              </option>
-            </select>
+              className={`${inputClass} min-h-[120px] resize-y`}
+              style={getGlowStyle('problems')}
+              placeholder="İşletmenizin büyüme sürecinde karşılaştığı temel zorlukları kısaca açıklayın..."
+            />
           </div>
 
           {/* Submit Button */}
@@ -217,7 +207,7 @@ export default function IgnitionForm() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            WHATSAPP İLE SİSTEMİ ATEŞLE
+            SİSTEMİ ATEŞLE
           </motion.button>
         </motion.form>
       </div>
